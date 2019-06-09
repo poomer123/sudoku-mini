@@ -1,0 +1,2 @@
+# sudoku-mini
+Sudoku mini
