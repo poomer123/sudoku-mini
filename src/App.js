@@ -1,18 +1,19 @@
 import React from "react";
 import "./App.css";
+import Cell from "./Cell";
 
 function App() {
   return (
     <div className="App">
       <div className="board">
-        <div className="cell">1</div>
-        <div className="cell">1</div>
-        <div className="cell">1</div>
-        <div className="cell">1</div>
-        <div className="cell">1</div>
-        <div className="cell">1</div>
-        <div className="cell">1</div>
-        <div className="cell">1</div>
+        <Cell />
+        <Cell />
+        <Cell />
+        <Cell />
+        <Cell />
+        <Cell />
+        <Cell />
+        <Cell />
       </div>
     </div>
   );
