@@ -7,13 +7,13 @@ function App() {
     <div className="App">
       <div className="board">
         <Cell number={2} />
-        <Cell />
-        <Cell />
-        <Cell />
-        <Cell />
-        <Cell />
-        <Cell />
-        <Cell />
+        <Cell number={2} />
+        <Cell number={2} />
+        <Cell number={2} />
+        <Cell number={2} />
+        <Cell number={2} />
+        <Cell number={2} />
+        <Cell number={2} />
       </div>
     </div>
   );
