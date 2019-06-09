@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <div className="board">
-        <Cell />
+        <Cell number={2} />
         <Cell />
         <Cell />
         <Cell />
