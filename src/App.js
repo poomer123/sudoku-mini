@@ -6,14 +6,14 @@ function App() {
   return (
     <div className="App">
       <div className="board">
-        <Cell number={2} />
-        <Cell number={2} />
-        <Cell number={2} />
-        <Cell number={2} />
-        <Cell number={2} />
-        <Cell number={2} />
-        <Cell number={2} />
-        <Cell number={2} />
+        <Cell />
+        <Cell />
+        <Cell />
+        <Cell />
+        <Cell />
+        <Cell />
+        <Cell />
+        <Cell />
       </div>
     </div>
   );
