@@ -7,7 +7,7 @@ class Cell extends Component {
   render() {
     return (
       <div
-        className="cell"
+        className={`cell ${this.props.isInitial ? "initial" : ""}`}
         onClick={e => {
           this.setState({
             number: (this.state.number + 1) % 5

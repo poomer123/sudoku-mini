@@ -6,6 +6,14 @@ function App() {
   return (
     <div className="App">
       <div className="board">
+        <Cell isInitial />
+        <Cell />
+        <Cell />
+        <Cell />
+        <Cell isInitial />
+        <Cell />
+        <Cell />
+        <Cell isInitial />
         <Cell />
         <Cell />
         <Cell />
@@ -13,7 +21,7 @@ function App() {
         <Cell />
         <Cell />
         <Cell />
-        <Cell />
+        <Cell isInitial />
       </div>
     </div>
   );
