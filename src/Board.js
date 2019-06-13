@@ -26,6 +26,7 @@ class Board extends Component {
                                 key={`cell-${i}-${j}`}
                                 number={number}
                                 isInitial={this.state.initial[i][j]}
+                                onChange={(newNumber) => this.onChange(newNumber, i, j)}
                             />
                         ))
                     ))
@@ -33,6 +34,14 @@ class Board extends Component {
                 }
             </div>
         )
+    }
+
+    onChange(newNumber, i, j) {
+        const { board } = this.state
+        board[i][j] = newNumber
+        this.setState({
+            board
+        })
     }
 }
 
