@@ -8,6 +8,12 @@ class Board extends Component {
             [1, 2, 3, 4],
             [1, 2, 3, 4],
             [1, 2, 3, 4]
+        ],
+        initial: [
+            [true, false, true, false],
+            [true, false, true, false],
+            [true, false, true, false],
+            [true, false, true, false]
         ]
     }
     render() {
@@ -16,7 +22,11 @@ class Board extends Component {
                 {
                     this.state.board.map((row, i) => (
                         row.map((number, j) => (
-                            <Cell key={`cell-${i}-${j}`} number={number} />
+                            <Cell
+                                key={`cell-${i}-${j}`}
+                                number={number}
+                                isInitial={this.state.initial[i][j]}
+                            />
                         ))
                     ))
 
