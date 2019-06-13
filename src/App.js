@@ -1,30 +1,13 @@
-import React from "react";
-import "./App.css";
-import Cell from "./Cell";
+import React from "react"
+import Board from "./Board"
+import "./App.css"
 
 function App() {
   return (
     <div className="App">
-      <div className="board">
-        <Cell isInitial />
-        <Cell />
-        <Cell />
-        <Cell />
-        <Cell isInitial />
-        <Cell />
-        <Cell />
-        <Cell isInitial />
-        <Cell />
-        <Cell />
-        <Cell />
-        <Cell />
-        <Cell />
-        <Cell />
-        <Cell />
-        <Cell isInitial />
-      </div>
+      <Board />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
