@@ -44,11 +44,15 @@ class Board extends Component {
     }
 
     componentDidMount() {
-        setInterval(() => {
+        this.interval = setInterval(() => {
             this.setState({
                 timer: this.state.timer + 1
             })
         }, 1000)
+    }
+
+    componentWillMount() {
+        clearInterval(this.interval)
     }
 
     onChange(newNumber, i, j) {
