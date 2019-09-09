@@ -15,11 +15,13 @@ class Board extends Component {
             [true, false, true, false],
             [true, false, false, true]
         ],
-        statusText: ''
+        statusText: '',
+        timer: 0
     }
     render() {
         return (
             <div>
+                <p className="timer">Elapsed Time : {this.state.timer} seconds</p>
                 <div className="board">
                     {
                         this.state.board.map((row, i) => (
@@ -39,6 +41,14 @@ class Board extends Component {
                 <p>{this.state.statusText}</p>
             </div>
         )
+    }
+
+    componentDidMount() {
+        setInterval(() => {
+            this.setState({
+                timer: this.state.timer + 1
+            })
+        }, 1000)
     }
 
     onChange(newNumber, i, j) {
