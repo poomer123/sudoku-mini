@@ -65,6 +65,9 @@ class Board extends Component {
 
     submit() {
         const isValid = this.validate(this.state.board)
+        if (isValid) {
+            clearInterval(this.interval)
+        }
         this.setState({
             statusText: isValid ? 'Complete' : 'In Valid'
         })
