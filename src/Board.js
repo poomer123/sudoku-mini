@@ -29,6 +29,7 @@ class Board extends Component {
                         ))
                     }
                 </div>
+                <button className="restart-button">Restart</button>
                 <button onClick={() => this.submit()}>Submit</button>
                 <p>{this.state.statusText}</p>
             </div>
@@ -47,8 +48,6 @@ class Board extends Component {
                 return resp.json()
             })
             .then(jsonResp => {
-                console.log(jsonResp)
-
                 this.setState({
                     board: jsonResp.board,
                     initial: jsonResp.board.map(
