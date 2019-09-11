@@ -29,7 +29,7 @@ class Board extends Component {
                         ))
                     }
                 </div>
-                <button className="restart-button">Restart</button>
+                <button className="restart-button" onClick={() => this.getBoardData()}>Restart</button>
                 <button onClick={() => this.submit()}>Submit</button>
                 <p>{this.state.statusText}</p>
             </div>
@@ -42,7 +42,17 @@ class Board extends Component {
                 timer: this.state.timer + 1
             })
         }, 1000)
+        this.getBoardData()
+    }
 
+    componentWillMount() {
+        clearInterval(this.interval)
+    }
+
+    getBoardData() {
+        this.setState({
+            loading: true
+        })
         fetch(randomBoardUrl)
             .then(resp => {
                 return resp.json()
@@ -59,10 +69,6 @@ class Board extends Component {
                     loading: false
                 })
             })
-    }
-
-    componentWillMount() {
-        clearInterval(this.interval)
     }
 
     onChange(newNumber, i, j) {
