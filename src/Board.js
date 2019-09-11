@@ -1,29 +1,22 @@
 import React, { Component } from "react"
 import Cell from "./Cell"
 
+const randomBoardUrl = 'https://us-central1-skooldio-courses.cloudfunctions.net/react_01/random'
+
 class Board extends Component {
     state = {
-        board: [
-            [1, 2, 3, 4],
-            [3, 4, 0, 0],
-            [2, 0, 4, 0],
-            [4, 0, 0, 2]
-        ],
-        initial: [
-            [true, true, true, true],
-            [true, true, false, false],
-            [true, false, true, false],
-            [true, false, false, true]
-        ],
+        board: [],
+        initial: [],
         statusText: '',
-        timer: 0
+        timer: 0,
+        loading: true
     }
     render() {
         return (
             <div>
                 <p className="timer">Elapsed Time : {this.state.timer} seconds</p>
                 <div className="board">
-                    {
+                    {!this.state.loading &&
                         this.state.board.map((row, i) => (
                             row.map((number, j) => (
                                 <Cell
@@ -34,7 +27,6 @@ class Board extends Component {
                                 />
                             ))
                         ))
-
                     }
                 </div>
                 <button onClick={() => this.submit()}>Submit</button>
@@ -49,6 +41,25 @@ class Board extends Component {
                 timer: this.state.timer + 1
             })
         }, 1000)
+
+        fetch(randomBoardUrl)
+            .then(resp => {
+                return resp.json()
+            })
+            .then(jsonResp => {
+                console.log(jsonResp)
+
+                this.setState({
+                    board: jsonResp.board,
+                    initial: jsonResp.board.map(
+                        row => row.map(
+                            item => item !== 0
+                        )
+                    ),
+                    timer: 0,
+                    loading: false
+                })
+            })
     }
 
     componentWillMount() {
